@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+
+</head>
+
+<body>
+    <div class="header-image-container">
+        <image class="header-image" src="{{ url_for('static', filename='pics/vector_logo2.svg')}}"></image>
+    </div>
+    <ul id="main-navbar" class="nav-list">
+
+        {% for i in range(1,5) %}
+        <li class="nav-item
+            {% if i == 2%} nav-dummy-data {% endif %}">
+            <span>{{i}}</span>
+            {% if i == 1 %}
+            <div class="icon-wrapper">
+                <div class="icon-border-color icon-border-basic-width icon-outer-div">
+                    <div class="icon-border-color icon-line1">
+
+                    </div>
+                    <div class="icon-border-color icon-line1">
+
+                    </div>
+                    <div class="icon-border-color icon-line1">
+
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </li>
+        {% endfor %}
+
+
+    </ul>
+
+    <div class="container-item">
+        <!-- <img src="https://via.placeholder.com/1080x512/000FFF"> -->
+        <div class="bg-image item-1 bg-image-active">
+            <!-- <img class="bg-image" src="{{url_for('static', filename='pics/slika_1.jpg')}}"> -->
+        </div>
+    </div>
+
+    <div class="container-item">
+        <!-- <img src="https://via.placeholder.com/1080x512/000FFF"> -->
+        <div class="bg-image item-25">
+            <!-- <img class="bg-image" src="{{url_for('static', filename='pics/slika_1.jpg')}}"> -->
+        </div>
+    </div>
+
+
+    <div class="container-item">
+            <!-- <img src="https://via.placeholder.com/1080x512/000FFF"> -->
+            <div class="bg-image item-255">
+                <!-- <img class="bg-image" src="{{url_for('static', filename='pics/slika_1.jpg')}}"> -->
+            </div>
+        </div>
+
+    <div class="container-item">
+        <!-- <img src="https://via.placeholder.com/1080x512/000FFF"> -->
+        <div class="item item-0">
+            <!-- <img class="bg-image" src="{{url_for('static', filename='pics/slika_1.jpg')}}"> -->
+        </div>
+    </div>
+    <div class="container-item" id="trigger2">
+        <!-- <img src="https://via.placeholder.com/1080x512/9517BA"> -->
+        <div class="item item-2"></div>
+    </div>
+    <div class="container-item">
+        <!-- <img src="https://via.placeholder.com/1080x512/AAA222"> -->
+        <div class="item item-3"></div>
+    </div>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/footer.css') }}">
+    <footer class="footer">
+        <span>
+            Created by
+        </span>
+        <span>
+            Powered by
+        </span>
+    </footer>
+
+</body>
+
+
+</html>

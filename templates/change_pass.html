@@ -1,0 +1,15 @@
+{% extends "login.html" %}
+{% block form_start %}
+<div class="login-div">
+    <form class="login-form" method="POST">
+        <span>App Secret key:</span>
+        <input type="text" class="input" name="key"></input>
+        <span>New Password:</span>
+        <input type="password" class="input" name="password"></input>
+        {% if error %}
+        <span>{{error}}</span>
+        {% endif %}
+        <button class="submit-button" type="submit" value="Submit">Change</button>
+    </form>
+</div>
+{% endblock %}
