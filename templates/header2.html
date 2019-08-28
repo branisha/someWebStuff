@@ -1,0 +1,32 @@
+{% block header %}
+<script src="{{ url_for('static', filename='js/script_header.js') }}"></script>
+<div class="header-image-container">
+    <image class="header-image" src="{{ url_for('static', filename='pics/vector_logo2.svg')}}"></image>
+</div>
+<ul id="main-navbar" class="nav-list">
+
+    {% for i in menu %}
+    <li class="nav-item">
+        <span>{{i}}</span>
+        {% if loop.first %}
+        <div class="icon-wrapper">
+            <div class="icon-border-color icon-border-basic-width icon-outer-div">
+                <div class="icon-border-color icon-line1">
+
+                </div>
+                <div class="icon-border-color icon-line1">
+
+                </div>
+                <div class="icon-border-color icon-line1">
+
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </li>
+    {% endfor %}
+    <li class="nav-item nav-dummy-data">
+
+    </li>
+</ul>
+{% endblock %}

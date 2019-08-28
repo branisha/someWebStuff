@@ -7,6 +7,24 @@ body{
     background-color: gray;
 }
 
+.css-test{
+    animation-name: example;
+    animation-duration: 1s;
+    animation-direction: alternate;
+}
+
+@keyframes example{
+    0%{
+        transform: translate(0, 0);
+    }
+    50%{
+        transform: translate(2px, 2px);
+    }
+    100%{
+        transform: translate(0, 0);
+    }
+}
+
 .tweentest{
     position: fixed;
     right: 10%;
@@ -57,6 +75,13 @@ body{
     color: black;
     position: relative;    
     z-index: 1;
+    justify-content: center;
+    align-items: center;
+    order: 3;
+}
+
+.nav-item:first-child{
+    order: 1;
 }
 
 .nav-item span{
@@ -66,14 +91,23 @@ body{
     display: inline-block;
     vertical-align: top;
     border: 0.1rem solid transparent;
-    margin: 0.3rem auto;
+    margin: 1rem auto;
     border-radius: 0.4rem;
+    padding: 0.5rem;
 }
 
 .nav-item span:hover{
     background-color: #ffda75;
-    border-color: #ffda75;
-    
+    border-color: black;
+    -webkit-box-shadow:2px 2px 0 0.5px black;
+    -moz-box-shadow: 2px 2px 0 0.5px black;
+    box-shadow: 2px 2px 0 0.5px black;
+}
+.nav-item span:active{
+    transition: all .1s;
+    transform: translate(4px, 4px);
+    box-shadow: none;
+    box-shadow: 0 0 0 0 #debc5d;
 }
 
 .nav-list::after{
@@ -95,6 +129,7 @@ body{
     flex-grow: 0;
     border: none;
     width: 0;
+    order: 2;
 }
 .nav-dummy-data span{
     visibility: hidden;
@@ -196,6 +231,13 @@ body{
 .icon-border-toggled{
     background-color: #ffda75;
 }
+.icon-border-toggled-shadow{
+    box-shadow: none !important;
+}
+.icon-wrapper-toggled{
+    transform: translate(2px, 2px);
+}
+
 
 .icon-outer-div{
     position: relative;
@@ -206,7 +248,10 @@ body{
     width: 0.8em;
     height: 0.8em;
     border-radius: 0.1em;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    -webkit-box-shadow:2px 2px 0 0 #000000;
+    -moz-box-shadow: 2px 2px 0 0 #000000;
+    box-shadow: 2px 2px 0 0 #000000;
 }
 
 .icon-line1{
@@ -227,6 +272,8 @@ body{
     right: 5%;
     top: 0;
     height: 100%;
+    transition: transform 0.2s;
+
 }
 .icon-wrapper, .icon-wrapper *{
     -webkit-user-select: none; /* Safari */        
@@ -352,6 +399,10 @@ user-select: none; /* Standard */
         margin-top: 0;
     }
 
+    .icon-wrapper{
+        font-size: 3rem;
+    }
+
     .nav-dummy-data{
         display: none;
         
@@ -369,8 +420,9 @@ user-select: none; /* Standard */
 
     .nav-item{
         max-height: 0;
-        font-size: 3rem;
+        font-size: 2rem;
         border-width: 0;
+        margin: 0;
     }
 
     .nav-item:first-child{
@@ -390,6 +442,7 @@ user-select: none; /* Standard */
 
     .nav-item > span{
         overflow: hidden;
+        margin: 0.5rem auto;
     }
 
     .nav-item-extended{

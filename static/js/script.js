@@ -24,16 +24,16 @@ function isMobile(element) {
     return window.innerWidth < 768;
 }
 
-function bgImageTranslate(scroll_pos){
-    if($(".item-3").offset().top - scroll_pos <= 1){
+function bgImageTranslate(scroll_pos) {
+    if ($(".item-3").offset().top - scroll_pos <= 1) {
         $(".bg-image").removeClass("bg-image-active");
         $(".item-255").addClass("bg-image-active");
     }
-    else if($(".item-2").offset().top - scroll_pos <= 1){
+    else if ($(".item-2").offset().top - scroll_pos <= 1) {
         $(".bg-image").removeClass("bg-image-active");
         $(".item-25").addClass("bg-image-active");
     }
-    else if($(".item-0").offset().top - scroll_pos <= 1){
+    else if ($(".item-0").offset().top - scroll_pos <= 1) {
         $(".bg-image").removeClass("bg-image-active");
         $(".item-1").addClass("bg-image-active");
     }
@@ -96,15 +96,10 @@ function updateNavbarPc() {
     navbar_breakpoint = navbar_init / window_height_init;
 }
 
-function toggleMenu() {
-
-    // this is done because of jumping animation
-
-    $("body").toggleClass("body-disable-scroll");
-    $($(".nav-list").children().splice(2)).toggleClass("nav-item-extended");
-
-
-}
+// function toggleMenu() {
+//     $("body").toggleClass("body-disable-scroll");
+//     $($(".nav-list").children().splice(2)).toggleClass("nav-item-extended");
+// }
 
 
 function removeSticky() {
@@ -149,11 +144,17 @@ $(document).ready(function () {
         console.log("out: " + $("#main-navbar").hasClass("nav-sticky"));
     });
 
-    // everything after 2 index
-    $(".icon-outer-div").on("click", function (e) {
-        toggleMenu();
-        $(this).toggleClass("icon-border-toggled");
-    });
+    // // everything after 2 index
+    // $(".icon-outer-div").on("click", function (e) {
+    //     toggleMenu();
+    //     $(this).toggleClass("icon-border-toggled");
+    //     $(this).toggleClass("icon-border-toggled-shadow");
+    //     $(".icon-wrapper").toggleClass("icon-wrapper-toggled");
+    //     setTimeout(function () {
+    //         $(".icon-outer-div").toggleClass("icon-border-toggled-shadow");
+    //         $(".icon-wrapper").toggleClass("icon-wrapper-toggled");
+    //     }, 300);
+    // });
 
     setTimeout(function () {
 

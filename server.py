@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 from flask import Flask, url_for, render_template, redirect, session, request
 from os import urandom
 import binascii
@@ -19,7 +22,7 @@ def getIpFromRequest(request):
 @app.before_request
 def before_request():
     # DEBUUUUG
-    session["auth"] = True
+    # session["auth"] = True
 
     client_ip = getIpFromRequest(request)
     if(not session.get("new_access")):
@@ -96,7 +99,11 @@ def hello_world():
     # return 'Hello, World!'
     if(session.get('auth') is not True):
         return redirect("login")
-    return render_template("index.html")
+    test = list()
+    test.append("Početna")
+    test.append("Kontakt")
+    test.append("O nama")
+    return render_template("main_page.html", menu=test)
 
 
 def start_server(ip, port, debug):
@@ -111,8 +118,8 @@ if __name__ == "__main__":
     # setup vars
     SECRET_KEY = binascii.hexlify(urandom(12))
     SERVER_IP = "0.0.0.0"
-    SERVER_PORT = 5000
-    DEBUG_FLAG = True
+    SERVER_PORT = 80
+    DEBUG_FLAG = False
 
     flask_logger.logEntry("Staring server")
     app.secret_key = SECRET_KEY

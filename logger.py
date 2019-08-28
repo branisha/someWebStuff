@@ -3,7 +3,7 @@ import os
 
 
 class Logger(object):
-    def __init__(self, log_file="/home/nikola/test.log"):
+    def __init__(self, log_file="/var/log/python_flask_server/python_server.log"):
         self._datetime_format_string = "%x-%X"
         self._log_file = log_file
 

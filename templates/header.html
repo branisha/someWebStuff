@@ -8,12 +8,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style/footer.css') }}">
     <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-
-
 </head>
 
 <body>
-
     <div class="header-image-container">
         <image class="header-image" src="{{ url_for('static', filename='pics/vector_logo2.svg')}}"></image>
     </div>
@@ -64,34 +61,7 @@
             <div class="bg-image item-255">
                 <!-- <img class="bg-image" src="{{url_for('static', filename='pics/slika_1.jpg')}}"> -->
             </div>
-   </div>
-
-    <div class="container-item">
-        <!-- <img src="https://via.placeholder.com/1080x512/000FFF"> -->
-        <div class="item item-0">
-            <!-- <img class="bg-image" src="{{url_for('static', filename='pics/slika_1.jpg')}}"> -->
-        </div>
-    </div>
-    <div class="container-item" id="trigger2">
-        <!-- <img src="https://via.placeholder.com/1080x512/9517BA"> -->
-        <div class="item item-2"></div>
-    </div>
-    <div class="container-item">
-        <!-- <img src="https://via.placeholder.com/1080x512/AAA222"> -->
-        <div class="item item-3"></div>
-    </div>
-
-   
-    <footer class="footer">
-        <span>
-            Created by
-        </span>
-        <span>
-            Powered by
-        </span>
-    </footer>
-
-</body>
-
-
-</html>
+</div>
+{% block content %}
+{% endblock %}
+{% include "footer.html" %}
